@@ -1,0 +1,14 @@
+<html>
+<haed>
+<script type="text/javascript" src="/js/common/window.js"></script>
+</haed>
+<body>
+<script type="text/javascript">
+<!--
+// recipe6.3 メインウィンドウを最大化する
+maximizeWindow();
+
+// -->
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<html>
+<haed>
+</haed>
+<body>
+<javascript>
+var longstring = 'One piece " + "plus one more piece.";
+alert(longstring);
+</javascript>
+</body>
+</html>

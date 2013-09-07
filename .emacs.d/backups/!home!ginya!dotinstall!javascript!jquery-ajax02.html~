@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charaset="UTF-8" />
+  <script src="jquery-1.7.2.min.js"></script>
+  <title>JQuery-Ajaxの勉強</title>
+</head>
+<body>
+  <h1>JQuery-Ajaxの勉強</h1>
+  <div id="main"></div>
+  <input type="button" id="kick_ajax" value="Ajax" />
+
+  <script>
+  $(function() {
+    $('#kick_ajax').click(function() {
+	});
+  });
+  </script>
+</body>
+</html>

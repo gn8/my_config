@@ -1,0 +1,173 @@
+<html>
+<haed>
+<script type="text/javascript" src="/js/common/objectsArraysString.js"></script>
+</haed>
+<body>
+<script type="text/javascript">
+<!--
+// recipe3.8 カスタムオブジェクトを作成する
+// コンストラクタ関数利用
+
+function showAll() {
+    console.log('Employee ' + this.name + ' is ' + this.age + ' yeaars old.');
+}
+
+function init() {
+    // 初期化ルーチンなどの記述
+//	alert('init');
+}
+
+function coworker(name, age) {
+	this.name = name;
+    this.age  = age || 0;    // 引数省略時のデフォルト値を設定
+	this.show = showAll;
+	init(this);
+}
+//var emp1 = new coworker("Alice", 23);
+var emp1 = new coworker("Alice");
+emp1.show();
+
+// ショートカット形式利用
+var emp2 = {name:"Fred", age:32, show:showAll};
+emp2.show();
+
+
+// recipe3.9 配列を高速に検索するためにハッシュテーブルをシミュレート
+var sales = new Array();
+sales[sales.length] = {period:"q1", region:"east", total:2300};
+sales[sales.length] = {period:"q2", region:"east", total:3105};
+sales[sales.length] = {period:"q3", region:"east", total:2908};
+sales[sales.length] = {period:"q4", region:"east", total:4800};
+sales[sales.length] = {period:"q1", region:"west", total:900};
+sales[sales.length] = {period:"q2", region:"west", total:1200};
+sales[sales.length] = {period:"q3", region:"west", total:1923};
+sales[sales.length] = {period:"q4", region:"west", total:3810};
+
+// ハッシュテーブル作成
+for (var i = 0; i < sales.length; i++) {
+    sales[sales[i].region + '_' + sales[i].period] = sales[i].total;
+}
+console.log(sales["east_q1"]);
+
+
+// recipe3.10 オブジェクトのプロパティを操作する
+function listProperties(obj, objName) {
+    var result = '';
+	for (var i in obj) {
+	    result += objName + '.' + i + '=' + obj[i] + "\n";
+	}
+//	alert(result);
+}
+listProperties(sales, 'sales');
+
+
+// recipe3.11 オブジェクトの配列をソートする
+var sales = new Array();
+sales[sales.length] = {period:"q1", region:"east", total:2300};
+sales[sales.length] = {period:"q2", region:"east", total:3105};
+sales[sales.length] = {period:"q3", region:"east", total:2908};
+sales[sales.length] = {period:"q4", region:"east", total:4800};
+sales[sales.length] = {period:"q1", region:"west", total:900};
+sales[sales.length] = {period:"q2", region:"west", total:1200};
+sales[sales.length] = {period:"q3", region:"west", total:1923};
+sales[sales.length] = {period:"q4", region:"west", total:3810};
+
+sales2 = sales;
+// total降順ソートの比較関数
+function compareTotal(a, b) {
+    return b.total - a.total;
+}
+
+// 日付の比較関数
+function compareDates(a, b) {
+    var dateA = new Date(a.year, a.month, b.date);
+	var dateB = new Date(b.year, b.month, b.date);
+	return dateA - dateB;
+}
+
+// ASCII値 比較関数
+function compareNames(a, b) {
+    var nameA = a.lastName.toLowerCase();
+	var nameB = a.lastName.toLowerCase();
+	if (nameA < nameB) {
+	    return -1;
+	}
+	if (nameA > nameB) {
+	    return 1;
+	}
+	return 0;
+}
+
+
+sales2.sort(compareTotal);
+console.log(sales);
+console.log(sales2);
+
+
+// recipe3.12 オブジェクトのプロパティをカスタマイズする
+// coworkerオブジェクトのコンストラクタを含めいない方法
+// 副作用：coworkerコンストラクタのプロトタイプにプロパティや値を設定しても、teamMemberに追加されない
+/*
+function teamMember(name, age, projects, hours) {
+    this.projects = projects;
+	this.hours = hours;
+    this.member = coworker;
+	this.member(name, age);
+}
+teamMember.prototype = new coworker();
+coworker.prototype.status = "on duty";
+*/
+// prototype
+function prototypeTestConstructor() {}
+prototypeTestConstructor.prototype.prop1 = 30;
+
+var obj1 = new prototypeTestConstructor();
+var obj2 = new prototypeTestConstructor();
+
+console.log('prototype: ' + obj1.prop1);
+console.log('prototype: ' + obj2.prop1);
+
+obj1.prop1 = 100;
+
+console.log('prototype: ' + obj1.prop1);
+console.log('prototype: ' + obj2.prop1);
+
+prototypeTestConstructor.prototype.prop1 = 70;
+
+console.log('prototype: ' + obj1.prop1);
+console.log('prototype: ' + obj2.prop1);
+
+
+// プロトタイプチェーン
+
+var objA = new Object();
+objA.prop1 = 10;
+function func1() {}
+func1.prototype = objA;
+
+var objB = new func1();
+function func2() {}
+func2.prototype = objB;
+
+var objC = new func2();
+console.log(objC.prop1);
+console.log(objC.hasOwnProperty("prop1"));
+objC.prop1 = 70;
+console.log(objC.prop1);
+console.log(objC.hasOwnProperty("prop1"));
+
+
+// recipe3.13 配列やカスタムオブジェクトを文字列に変換する
+function coworker2(name, age, dept) {
+    this.name = name;
+	this.age  = age;
+	this.dept = dept;
+}
+var kevin  = new coworker2("Kevin", 28, "Accounts Payagle");
+console.log(object2String(kevin));
+
+
+// -->
+</script>
+</body>
+</html>

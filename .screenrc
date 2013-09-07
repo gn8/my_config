@@ -1,0 +1,12 @@
+escape ^Tt
+vbell off
+hardstatus alwayslastline " %`%-w%{=b bw}%n %t%{-}%+w"
+autodetach on
+defutf8 on
+bind ^k kill
+# ステータス行に表示するメッセージを10秒間表示する
+msgwait 10
+# スクロールバックできる行数設定
+defscrollback 2000
+# 起動時にライセンス画面を表示しない
+startup_message off

@@ -1,0 +1,88 @@
+<html>
+<haed>
+</haed>
+<body>
+<script type="text/javascript">
+<!--
+// recipe3.1 単配列を作成する
+var myArray = new Array();
+myArray[0] = 'Alice';
+myArray[1] = 'Fred';
+document.write(myArray + '<br />');
+
+myArray[myArray.length] = 'Add';
+document.write(myArray + '<br />');
+
+var myArray2 = new Array(12);
+document.write(myArray2 + '<br />');
+
+var myArray3 = new Array(1, 2, 3);
+document.write(myArray3 + '<br />');
+
+var myArray4 = ['add1', 'add2', 'add3'];
+document.write(myArray4 + '<br />');
+
+
+// recipe3.2 多次元配列を作成する
+var salesArray = [[2300, 3105, 2909, 4800],
+                  [1800, 1940, 2470, 4350],
+				  [900,  1200, 1923, 3810]];
+document.write(salesArray + '<br />');
+
+
+// recipe3.3 配列と文字列を変換する
+// 配列->文字列
+var arrayAsString = myArray.join(" ");
+document.write(arrayAsString + '<br />');
+// 文字列->配列
+// splitメソッドは正規表現も可
+var restoredArray = arrayAsString.split(" ");
+document.write(restoredArray + '<br />');
+var amounts = '30.25,120.00,45.08,200.10';
+document.write(amounts.split(/\.\d{2},?/) + '<br />');
+
+
+// recipe3.4 配列の要素に対して何らかの処理を行う
+for (var i = 0; i < myArray.length; i++) {
+    document.write('Item ' + i + ' is: ' + myArray[i] + '. <br />');
+}
+
+
+// recipe3.5 単純な配列をソートする
+// 昇順ソート(ASCII値)
+var myArray = [1, 100, 5, 4];
+myArray.sort();
+document.write(myArray + '<br />');
+myArray.sort(
+    function (a, b) {
+        return a - b;
+	});
+document.write(myArray + '<br />');
+myArray.sort(
+    function (a, b) {
+        return b - a;
+	});
+document.write(myArray + '<br />');
+
+
+// recipe3.6 配列を結合する
+var array1 = [10, 11, 12];
+var array2 = [30, 31, 32];
+var array3 = [20, 21, 22];
+document.write(array1.concat(array2, array3, 56) + '<br />');
+
+
+// recipe3.7 配列を分割する
+var myArray  = [10, 20, 30, 40, 50, 60, 70];
+var subArray = myArray.splice(0, 3); 
+document.write(myArray  + '<br />');
+document.write(subArray  + '<br />');
+
+var myArray  = [10, 20, 30, 40, 50, 60, 70];
+var subArray = myArray.splice(2, 3, "Jane", "Joe"); 
+document.write(myArray  + '<br />');
+document.write(subArray  + '<br />');
+// -->
+</script>
+</body>
+</html>

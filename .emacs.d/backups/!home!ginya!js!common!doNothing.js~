@@ -1,0 +1,4 @@
+function doNothing() {
+    return true;
+}
+window.onerror = doNothing;

@@ -1,0 +1,16 @@
+<html>
+<haed>
+<!-- スクリプトエラーを表示しない-->
+<!-- 運用時のみONにするべき -->
+<!--
+<script type="text/javascript" src="/js/common/doNothing.js"></script>
+-->
+</haed>
+<body>
+<script type="text/javascript">
+<!--
+// -->
+</script>
+error.html
+</body>
+</html>

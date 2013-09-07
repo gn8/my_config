@@ -1,0 +1,47 @@
+/*
+   セレクタ
+   プロパティ
+   値
+*/
+h1 {
+     color: red;
+}
+
+p {
+    /* テキストのスタイル */
+    color: green;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+
+    line-height: 1.5;
+    text-decoration: line-through underline;
+    font-style: italic;
+}
+
+body {
+    background-color: yellow;
+    background-image: url('background.gif');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-attachment: fixed;
+/*
+       background: url('background.gif') no-repeat top right;
+*/
+}
+
+/* ID要素 */
+#main {
+    font-size: 36px;
+}
+
+/* class要素 */
+.test {
+    font-size: 9px;
+}
+
+/* 複数の要素 */
+#main, .test {
+    border: 1px solid #ccc;
+}
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSSのお勉A強</title>
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+<body>
+  <div id="header">Header</div>
+  <div id="main">Main</div>
+  <div id="sidebar">Sidebar</div>
+  <div id="footer">Footer</div>
+</body>
+</html>  
+
+            
