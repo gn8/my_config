@@ -1,4 +1,7 @@
 auto-save-list/*.*
+!auto-save-list/README.md
 undohist/*.*
+!undohist/README.md
 ac-comphist.dat
 backups/*.*
+!backups/README.md
